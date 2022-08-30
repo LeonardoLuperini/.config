@@ -1,0 +1,20 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# The character module shows a character (usually an arrow) beside where the text is entered in your terminal.
+[character] # The name of the module we are configuring is "character"
+error_symbol = "[✗](bold red) " # The "error_symbol" segment is being set to "➜" with the color "bold green"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+# The username module shows active user's username
+#[username]
+#style_user = "white bold"
+#style_root = "black bold"
+#format = "[$user]($style) "
+#disabled = false
+#show_always = true
