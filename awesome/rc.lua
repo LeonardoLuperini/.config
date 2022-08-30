@@ -28,6 +28,9 @@ require("awful.hotkeys_popup.keys")
 -- Error handling
 require("modules.error_handling")
 
+-- Theme selection
+local ts = require("modules.theme_selection")
+
 -- Variable definitions
 require("modules.variable_definitions")
 
