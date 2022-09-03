@@ -7,9 +7,10 @@ source $ZPLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
 #Alias
 alias la="ls -a --color=auto"
 alias ls="ls --color=auto"
+alias im="kitty +kitten icat"
 
 # History sub tring search options
-#* se passi a vi ricordati di cambiarlo
+# se passi a vi ricordati di cambiarlo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 

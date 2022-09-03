@@ -5,8 +5,8 @@
 add_newline = true
 
 # The character module shows a character (usually an arrow) beside where the text is entered in your terminal.
-[character] # The name of the module we are configuring is "character"
-error_symbol = "[✗](bold red) " # The "error_symbol" segment is being set to "➜" with the color "bold green"
+#[character] # The name of the module we are configuring is "character"
+#error_symbol = "[✗](bold red) " # The "error_symbol" segment is being set to "➜" with the color "bold green"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
