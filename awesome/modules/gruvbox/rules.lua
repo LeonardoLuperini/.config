@@ -18,7 +18,8 @@ ruled.client.connect_signal("request::rules", function()
 			focus     = awful.client.focus.filter,
             raise     = true,
             screen    = awful.screen.preferred,
-            placement = awful.placement.no_overlap+awful.placement.no_offscreen,	
+            placement = awful.placement.no_overlap+awful.placement.no_offscreen,
+        	titlebars_enabled = false,
 		}
     }
 
@@ -46,12 +47,13 @@ ruled.client.connect_signal("request::rules", function()
         properties = { floating = true }
     }
 
-    -- Add titlebars to normal clients and dialogs
+    --[[ Add titlebars to normal clients and dialogs
     ruled.client.append_rule {
         id         = "titlebars",
-        rule_any   = { type = { "normal", "dialog" } },
-        properties = { titlebars_enabled = true      }
-    }
+		-- rule_any   = { type = { "normal", "dialog" } },
+        properties = { titlebars_enabled = true }
+    }--]]
+	
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- ruled.client.append_rule {

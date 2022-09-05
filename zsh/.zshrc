@@ -5,9 +5,11 @@ source $ZPLUGINS/zsh-history-substring-search.zsh
 source $ZPLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
 
 #Alias
-alias la="ls -a --color=auto"
+alias la="ls -a"
+alias lac="ls -a --color=auto"
 alias ls="ls --color=auto"
 alias im="kitty +kitten icat"
+alias th="kitty +kitten themes" 
 
 # History sub tring search options
 # se passi a vi ricordati di cambiarlo

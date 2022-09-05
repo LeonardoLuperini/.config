@@ -30,37 +30,43 @@ require("modules.error_handling")
 
 -- Theme selection
 local ts = require("modules.theme_selection")
+local fm = ts.folder_module
 
 -- Variable definitions
-require("modules.variable_definitions")
+require("modules."..fm.."variable_definitions")
 
 -- Tag 
-require("modules.tag_layout")
+require("modules."..fm.."tag_layout")
 
 -- Menu
-require("modules.menu")
+require("modules."..fm.."menu")
 
 -- Wallpaper
-require("modules.wallpaper")
+require("modules."..fm.."wallpaper")
 
 -- Wibar
-require("modules.wibar")
+require("modules."..fm.."wibar")
 
 -- Mouse bindings
-require("modules.mouse_bindings")
+require("modules."..fm.."mouse_bindings")
 
 -- Key bindings
-require("modules.keybindings")
+require("modules."..fm.."keybindings")
 
 -- Rules
-require("modules.rules")
+require("modules."..fm.."rules")
 
 -- Titlebars
-require("modules.titlebars")
+require("modules."..fm.."titlebars")
 
 -- Notifications
-require("modules.notifications")
+require("modules."..fm.."notifications")
 
 -- Autostart
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+
+--[[ If you want to print something
+local u = require("modules.utils")
+u.p("modules."..fm.."titlebars")
+--]]
 
