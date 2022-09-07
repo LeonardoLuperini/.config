@@ -1,5 +1,4 @@
 local a = vim.api
-
 -- Functional wrapper for mapping custom keybindings
 -- unless specified in opts, recursive mapping is disabled
 function map(mode, lhs, rhs, opts)
@@ -11,7 +10,9 @@ function map(mode, lhs, rhs, opts)
 end
 
 -- Keybindings
-map("v", "<Leader>y", '"+y')
-map("n", "<Leader>p", '"+P')
-map("v", "<Leader>d", '"+d')
+vim.g.mapleader = " "
 
+map("v", "<Leader>y", '"+y')
+map("n", "<Leader>p", '"+P') -- NB: p is mapped at P
+map("v", "<Leader>d", '"+d')
+map("n", "<Leader>ff", "<cmd>Telescope find_files<cr>")

@@ -59,7 +59,7 @@ theme.fg_minimize   = fg0
 theme.useless_gap         = dpi(3)
 theme.border_width        = dpi(2)
 theme.border_color_normal = bg0_h
-theme.border_color_active = green_l
+theme.border_color_active = aqua_d
 theme.border_color_marked = blue_d
 
 -- There are other variable sets
