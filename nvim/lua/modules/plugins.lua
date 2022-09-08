@@ -53,11 +53,14 @@ return packer.startup(function(use)
 	}
 
 	-- Telescope
-	use {"nvim-telescope/telescope.nvim", branch = '0.1.x'}-- Highly extendable fuzzy finder over lists
-	use { "nvim-telescope/telescope-file-browser.nvim" }
+	use { "nvim-telescope/telescope.nvim", branch = '0.1.x' }-- Highly extendable fuzzy finder over lists
+	use "nvim-telescope/telescope-file-browser.nvim"
 
 	-- Tree-sitter
-	-- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	
+	-- LSP
+	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 
 	-- My colorscheme here
 	-- use "ellisonleao/gruvbox.nvim" -- Gruvbox lua port 
