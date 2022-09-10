@@ -5,6 +5,7 @@ source $ZPLUGINS/zsh-history-substring-search.zsh
 source $ZPLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
 
 #Alias
+alias llah="ls -lah"
 alias la="ls -a"
 alias lac="ls -a --color=auto"
 alias ls="ls --color=auto"
