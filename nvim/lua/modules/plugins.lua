@@ -46,7 +46,7 @@ return packer.startup(function(use)
 	use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
 	use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
-	--Autopairs
+	-- Autopairs
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup { map_cr = true } end
@@ -58,9 +58,18 @@ return packer.startup(function(use)
 
 	-- Tree-sitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-	
+
 	-- LSP
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+
+	-- Completion
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	-- use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
+	use { "L3MON4D3/LuaSnip", run = "make install_jsregexp"   }
+	use 'saadparwaiz1/cmp_luasnip'
 
 	-- My colorscheme here
 	-- use "ellisonleao/gruvbox.nvim" -- Gruvbox lua port 

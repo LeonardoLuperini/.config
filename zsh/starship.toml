@@ -18,3 +18,20 @@ disabled = true
 #format = "[$user]($style) "
 #disabled = false
 #show_always = true
+
+[lua]
+format = "via [ $version](bold blue) "
+
+[git_status]
+format = '([\[$all_status\] \[$ahead_behind\]]($style) )'
+conflicted = " conflicted "
+ahead = "ahead"
+behind = "behind"
+diverged = "diverged"
+up_to_date = "✓"
+untracked = "untraked"
+stashed = "stashed"
+modified = "modified"
+staged = '[++\($count\)](green)'
+renamed = "renamed"
+deleted = "deleted"

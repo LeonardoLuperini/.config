@@ -10,58 +10,59 @@ local dpi = xresources.apply_dpi
 local gfs = require("gears.filesystem")
 local themes_path = "~/.config/awesome/themes/"
 
-local red_d    = "#cc241d"
-local red_l    = "#fb4934"
-local green_d  = "#98971a"
-local green_l  = "#b8bb26"
-local yellow_d = "#d79921"
-local yellow_l = "#fabd2f"
-local blue_d   = "#458588"
-local blue_l   = "#83a598"
-local purple_d = "#b16286"
-local purple_l = "#d3869b"
-local aqua_d   = "#689d6a"
-local aqua_l   = "#8ec07c"
-local gray_d   = "#928374"
-local gray_l   = "#a89984"
-local orange_d = "#d65d0e"
-local orange_l = "#fe8019"
+local theme = {}
+
+theme.red_d    = "#cc241d"
+theme.red_l    = "#fb4934"
+theme.green_d  = "#98971a"
+theme.green_l  = "#b8bb26"
+theme.yellow_d = "#d79921"
+theme.yellow_l = "#fabd2f"
+theme.blue_d   = "#458588"
+theme.blue_l   = "#83a598"
+theme.purple_d = "#b16286"
+theme.purple_l = "#d3869b"
+theme.aqua_d   = "#689d6a"
+theme.aqua_l   = "#8ec07c"
+theme.gray_d   = "#928374"
+theme.gray_l   = "#a89984"
+theme.orange_d = "#d65d0e"
+theme.orange_l = "#fe8019"
 
 -- From the darker to birghter
-local bg0_h    = "#1d2021"
-local bg0      = "#282828"
-local bg0_s    = "#23302f"
-local bg1      = "#3c3836"
-local bg2      = "#504945"
-local bg3      = "#665c54"
-local bg4      = "#7c6f64"
-local fg4      = "#a89984"
-local fg3      = "#bdae93"
-local fg2      = "#d5c4a1"
-local fg1      = "#ebdbb2"
-local fg0      = "#fbf1c7"
-
-local theme = {}
+theme.bg0_h    = "#1d2021"
+theme.bg0      = "#282828"
+theme.bg0_s    = "#23302f"
+theme.bg1      = "#3c3836"
+theme.bg2      = "#504945"
+theme.bg3      = "#665c54"
+theme.bg4      = "#7c6f64"
+theme.fg4      = "#a89984"
+theme.fg3      = "#bdae93"
+theme.fg2      = "#d5c4a1"
+theme.fg1      = "#ebdbb2"
+theme.fg0      = "#fbf1c7"
 
 theme.font          = "sans 8"
 
-theme.bg_normal     = bg0_h
-theme.bg_focus      = bg1
-theme.bg_urgent     = red_d
-theme.bg_minimize   = bg0
+theme.bg_normal     = theme.bg0_h
+theme.bg_focus      = theme.bg1
+theme.bg_urgent     = theme.red_d
+theme.bg_minimize   = theme.bg0
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = fg1 
-theme.fg_focus      = fg0
-theme.fg_urgent     = fg0
-theme.fg_minimize   = fg0
+theme.fg_normal     = theme.fg1
+theme.fg_focus      = theme.fg0
+theme.fg_urgent     = theme.fg0
+theme.fg_minimize   = theme.fg0
 
 theme.useless_gap         = dpi(3)
 theme.border_width        = dpi(2)
-theme.border_color_normal = bg0_h
-theme.border_color_active = aqua_d
-theme.border_color_marked = blue_d
+theme.border_color_normal = theme.bg0_h
+theme.border_color_active = theme.aqua_d
+theme.border_color_marked = theme.blue_d
 
+theme.hotkeys_modifiers_fg = theme.bg4
 -- There are other variable sets
 -- overriding the gruvbox one when
 -- defined, the sets are:

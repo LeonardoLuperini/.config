@@ -4,13 +4,20 @@ source $ZPLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZPLUGINS/zsh-history-substring-search.zsh
 source $ZPLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
 
-#Alias
+## Alias
+# ls alias
 alias llah="ls -lah"
 alias la="ls -a"
 alias lac="ls -a --color=auto"
 alias ls="ls --color=auto"
+
+# Kitty alias
 alias im="kitty +kitten icat"
 alias th="kitty +kitten themes" 
+
+# Misc alias
+alias c="clear"
+alias pls="sudo"
 
 # History sub tring search options
 # se passi a vi ricordati di cambiarlo

@@ -22,5 +22,5 @@ map("n", "<Leader>ff", "<cmd>Telescope find_files<cr>")
 map("n", "<Leader>fb", "<cmd>Telescope file_browser<cr>")
 
 -- Indent Tabs
-map("v", "<C-t>", ">gv")
-map("v", "<C-d>", "<gv")
+map("v", "<Tab>", ">gv")
+map("v", "<S-Tab>", "<gv")
