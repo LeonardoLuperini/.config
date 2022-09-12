@@ -48,28 +48,30 @@ return packer.startup(function(use)
 
 	-- Autopairs
 	use {
-		"windwp/nvim-autopairs",
+		"windwp/nvim-autopairs", -- Need to say what this plugin does?
 		config = function() require("nvim-autopairs").setup { map_cr = true } end
 	}
 
 	-- Telescope
-	use { "nvim-telescope/telescope.nvim", branch = '0.1.x' }-- Highly extendable fuzzy finder over lists
-	use "nvim-telescope/telescope-file-browser.nvim"
+	use { "nvim-telescope/telescope.nvim", branch = '0.1.x' } -- Highly extendable fuzzy finder over lists
+	use "nvim-telescope/telescope-file-browser.nvim" -- Extension for telescope
 
 	-- Tree-sitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
 	-- LSP
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+	use "williamboman/mason.nvim"
+	use "williamboman/mason-lspconfig.nvim"
 
 	-- Completion
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	-- use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/nvim-cmp'
-	use { "L3MON4D3/LuaSnip", run = "make install_jsregexp"   }
-	use 'saadparwaiz1/cmp_luasnip'
+	use 'hrsh7th/cmp-nvim-lsp' -- Completion using LSP
+	use 'hrsh7th/cmp-buffer' -- Completion using things in buffer
+	use 'hrsh7th/cmp-path' -- Completion using things in path
+	use 'hrsh7th/cmp-cmdline' -- Completion for the commands
+	use 'hrsh7th/nvim-cmp' -- Base plugin
+	use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" } -- Snippet engine
+	use 'saadparwaiz1/cmp_luasnip' -- make luasnip and cmp comunicate 
 
 	-- My colorscheme here
 	-- use "ellisonleao/gruvbox.nvim" -- Gruvbox lua port 
