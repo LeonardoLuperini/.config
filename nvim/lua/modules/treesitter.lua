@@ -1,3 +1,6 @@
+local status, _ = pcall(require, "nvim-treesitter")
+if not status then print("Problems with treesitter in treesitter.lua file") return end
+
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "c", "lua" },

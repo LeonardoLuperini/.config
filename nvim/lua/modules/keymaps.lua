@@ -20,6 +20,7 @@ map("v", "<Leader>d", '"+d')
 -- Telsecsope keymaps
 map("n", "<Leader>ff", "<cmd>Telescope find_files<cr>")
 map("n", "<Leader>fb", "<cmd>Telescope file_browser<cr>")
+map("n", "<Leader>gl", "<cmd>Telescope live_grep<cr>")
 
 -- Indent Tabs
 map("v", "<Tab>", ">gv")
@@ -32,8 +33,11 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local cmp = require"cmp"
-local luasnip = require"luasnip"
+local status, cmp = pcall(require, "cmp")
+if not status then print("Problems with cmp in keyboard.lua file") return end
+
+local status, luasnip = pcall(require, "luasnip")
+if not status then print("Problems with luasnip in keyboard.lua file") return end
 
 local plugin_map = {
 	cmp = {

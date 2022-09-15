@@ -18,10 +18,10 @@ local menubar = require("menubar")
 -- {{{ Wibar
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+Mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+Mytextclock = wibox.widget.textclock()
 
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
@@ -93,9 +93,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
             s.mytasklist, -- Middle widget
             { -- Right widgets
                 layout = wibox.layout.fixed.horizontal,
-                mykeyboardlayout,
+                Mykeyboardlayout,
                 wibox.widget.systray(),
-                mytextclock,
+                Mytextclock,
                 s.mylayoutbox,
             },
         }

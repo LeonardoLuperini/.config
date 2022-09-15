@@ -7,7 +7,7 @@ local xresources = require("beautiful.xresources")
 local rnotification = require("ruled.notification")
 local dpi = xresources.apply_dpi
 
-local gfs = require("gears.filesystem")
+-- local gfs = require("gears.filesystem")
 local themes_path = "~/.config/awesome/themes/"
 
 local theme = {}
@@ -56,7 +56,7 @@ theme.fg_focus      = theme.fg0
 theme.fg_urgent     = theme.fg0
 theme.fg_minimize   = theme.fg0
 
-theme.useless_gap         = dpi(3)
+theme.useless_gap         = dpi(4)
 theme.border_width        = dpi(2)
 theme.border_color_normal = theme.bg0_h
 theme.border_color_active = theme.aqua_d

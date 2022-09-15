@@ -1,10 +1,10 @@
 local h = require "modules.lsp.handlers"
 
-local sumneko_binary = "/usr/bin/lua-language-server"
-local sumneko_root_path = "/usr/lib/lua-language-server"
+-- local sumneko_root_path = "/usr/lib/lua-language-server"
+-- local sumneko_binary = "/usr/bin/lua-language-server"
 
 require('lspconfig')["sumneko_lua"].setup({
-	cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+	-- cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
 	-- An example of settings for an LSP server.
 	--    For more options, see nvim-lspconfig
 	settings = {
