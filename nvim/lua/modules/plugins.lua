@@ -61,8 +61,6 @@ return packer.startup(function(use)
 
 	-- LSP
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-	use "williamboman/mason.nvim"
-	use "williamboman/mason-lspconfig.nvim"
 
 	-- Completion
 	use 'hrsh7th/cmp-nvim-lsp' -- Completion using LSP

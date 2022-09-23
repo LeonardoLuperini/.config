@@ -23,16 +23,17 @@ M.setup = function()
 	vim.diagnostic.config(config)
 end
 
-local lsp_keymaps = require("modules.keymaps").lsp
 
+
+local lsp_keymaps = require("modules.keymaps").lsp
 M.on_attach = function(client, bufnr)
   lsp_keymaps(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
-
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
+
 
 return M

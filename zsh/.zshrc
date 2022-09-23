@@ -1,7 +1,7 @@
 #Plugin
 source $ZPLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZPLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZPLUGINS/zsh-history-substring-search.zsh
+source $ZPLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZPLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
 
 ## Alias
@@ -18,11 +18,12 @@ alias th="kitty +kitten themes"
 # Misc alias
 alias c="clear"
 alias pls="sudo"
+alias battery="cat /sys/class/power_supply/BAT1/capacity"
 
 # History sub tring search options
 # se passi a vi ricordati di cambiarlo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile

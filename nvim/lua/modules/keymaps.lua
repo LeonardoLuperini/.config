@@ -20,7 +20,7 @@ map("v", "<Leader>d", '"+d')
 -- Telsecsope keymaps
 map("n", "<Leader>ff", "<cmd>Telescope find_files<cr>")
 map("n", "<Leader>fb", "<cmd>Telescope file_browser<cr>")
-map("n", "<Leader>gl", "<cmd>Telescope live_grep<cr>")
+map("n", "<Leader>lg", "<cmd>Telescope live_grep<cr>")
 
 -- Indent Tabs
 map("v", "<Tab>", ">gv")
