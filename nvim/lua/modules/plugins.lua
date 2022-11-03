@@ -71,6 +71,8 @@ return packer.startup(function(use)
 	use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" } -- Snippet engine
 	use 'saadparwaiz1/cmp_luasnip' -- make luasnip and cmp comunicate 
 
+	use {"akinsho/toggleterm.nvim", tag = '*'}
+
 	-- My colorscheme here
 	-- use "ellisonleao/gruvbox.nvim" -- Gruvbox lua port 
 	use "morhetz/gruvbox" -- Gruvbox original

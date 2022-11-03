@@ -12,6 +12,9 @@ end
 -- Keybindings
 vim.g.mapleader = " "
 
+-- Motions
+map("", "gl", "<C-End>")
+
 -- Copy paste keymaps
 map("v", "<Leader>y", '"+y')
 map("n", "<Leader>p", '"+p')
@@ -20,12 +23,23 @@ map("v", "<Leader>d", '"+d')
 -- Telsecsope keymaps
 map("n", "<Leader>ff", "<cmd>Telescope find_files<cr>")
 map("n", "<Leader>fb", "<cmd>Telescope file_browser<cr>")
-map("n", "<Leader>lg", "<cmd>Telescope live_grep<cr>")
+map("n", "<Leader>gl", "<cmd>Telescope live_grep<cr>")
 
 -- Indent Tabs
 map("v", "<Tab>", ">gv")
 map("v", "<S-Tab>", "<gv")
 
+-- Moving the mouse through the current windows
+map("n", "<C-l>", "<C-W>l") -- Move the mouse to the window on the left
+map("n", "<C-h>", "<C-W>h") -- Move the mouse to the window on the right
+map("n", "<C-k>", "<C-W>k") -- Move the mouse to the window above
+map("n", "<C-h>", "<C-W>h") -- Move the mouse to the window above
+
+-- Moving the current window  
+map("n", "<Leader>l", "<C-W>L") -- Move the current window to the left
+map("n", "<Leader>h", "<C-W>H") -- Move the current window to the right
+map("n", "<Leader>k", "<C-W>K") -- Move the current window up
+map("n", "<Leader>j", "<C-W>H") -- Move the current window down
 
 
 local has_words_before = function()
@@ -33,10 +47,11 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local status, cmp = pcall(require, "cmp")
+local luasnip, status, cmp
+status, cmp = pcall(require, "cmp")
 if not status then print("Problems with cmp in keyboard.lua file") return end
 
-local status, luasnip = pcall(require, "luasnip")
+status, luasnip = pcall(require, "luasnip")
 if not status then print("Problems with luasnip in keyboard.lua file") return end
 
 local plugin_map = {
@@ -77,7 +92,8 @@ local plugin_map = {
 		buf_map(bufnr, 'n', 'K' , '<cmd>lua vim.lsp.buf.hover()<CR>'         , opts)
 		buf_map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>'    , opts)
 		buf_map(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts) -- Does not work in lua
-		buf_map(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+		buf_map(bufnr, "n", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+		buf_map(bufnr, "n", "<A-r>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 
 	end
 }
