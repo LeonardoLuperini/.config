@@ -30,5 +30,8 @@ if not status then print("Problems with lsp in init.lua file") end
 status, _ = pcall(require, "modules.completion")
 if not status then print("Problems with completion in init.lua file") end
 
-status, _ = pcall(require, "modules.terminal")
-if not status then print("Problems with terminal in init.lua file") end
+status, _ = pcall(require, "modules.dap")
+if not status then print("Problems with dap in init.lua file") end
+
+-- status, _ = pcall(require, "modules.terminal")
+-- if not status then print("Problems with terminal in init.lua file") end

@@ -93,7 +93,7 @@ local plugin_map = {
 		buf_map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>'    , opts)
 		buf_map(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts) -- Does not work in lua
 		buf_map(bufnr, "n", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-		buf_map(bufnr, "n", "<A-r>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+		buf_map(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 
 	end
 }

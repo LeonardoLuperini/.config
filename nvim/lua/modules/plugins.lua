@@ -52,6 +52,9 @@ return packer.startup(function(use)
 		config = function() require("nvim-autopairs").setup { map_cr = true } end
 	}
 
+	-- Debugger
+	use 'mfussenegger/nvim-dap'
+
 	-- Telescope
 	use { "nvim-telescope/telescope.nvim", branch = '0.1.x' } -- Highly extendable fuzzy finder over lists
 	use "nvim-telescope/telescope-file-browser.nvim" -- Extension for telescope
@@ -71,7 +74,7 @@ return packer.startup(function(use)
 	use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" } -- Snippet engine
 	use 'saadparwaiz1/cmp_luasnip' -- make luasnip and cmp comunicate 
 
-	use {"akinsho/toggleterm.nvim", tag = '*'}
+	-- use {"akinsho/toggleterm.nvim", tag = '*'}
 
 	-- My colorscheme here
 	-- use "ellisonleao/gruvbox.nvim" -- Gruvbox lua port 
