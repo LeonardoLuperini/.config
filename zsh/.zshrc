@@ -35,6 +35,8 @@ bindkey -e
 source $ZPLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
+bindkey "^[[1;2A" history-substring-search-up
+bindkey "^[[1;2B" history-substring-search-down
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/leonardo/.zshrc'

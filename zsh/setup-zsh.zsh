@@ -20,4 +20,3 @@ iferror $? "\nzsh-you-should-use"
 
 git clone https://github.com/zsh-users/zsh-history-substring-search.git 2> /dev/null
 iferror $? "\nzsh-history-substring-search" 
-
