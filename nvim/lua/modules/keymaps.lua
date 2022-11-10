@@ -30,16 +30,16 @@ map("v", "<Tab>", ">gv")
 map("v", "<S-Tab>", "<gv")
 
 -- Moving the mouse through the current windows
-map("n", "<C-l>", "<C-W>l") -- Move the mouse to the window on the left
-map("n", "<C-h>", "<C-W>h") -- Move the mouse to the window on the right
+map("n", "<C-l>", "<C-W>l") -- Move the mouse to the window on the right
+map("n", "<C-h>", "<C-W>h") -- Move the mouse to the window on the left
 map("n", "<C-k>", "<C-W>k") -- Move the mouse to the window above
-map("n", "<C-h>", "<C-W>h") -- Move the mouse to the window above
+map("n", "<C-j>", "<C-W>j") -- Move the mouse to the window above
 
 -- Moving the current window  
-map("n", "<Leader>l", "<C-W>L") -- Move the current window to the left
-map("n", "<Leader>h", "<C-W>H") -- Move the current window to the right
+map("n", "<Leader>l", "<C-W>L") -- Move the current window to the right
+map("n", "<Leader>h", "<C-W>H") -- Move the current window to the left
 map("n", "<Leader>k", "<C-W>K") -- Move the current window up
-map("n", "<Leader>j", "<C-W>H") -- Move the current window down
+map("n", "<Leader>j", "<C-W>J") -- Move the current window down
 
 
 local has_words_before = function()

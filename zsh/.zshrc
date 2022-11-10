@@ -9,7 +9,6 @@ alias llah="ls -lah"
 alias la="ls -a"
 alias lac="ls -a --color=auto"
 alias ls="ls --color=auto"
-alias plsInstall="sudo pacman -Syu --needed"
 
 # Kitty alias
 alias im="kitty +kitten icat"
@@ -18,6 +17,12 @@ alias th="kitty +kitten themes"
 # Misc alias
 alias c="clear"
 alias pls="sudo"
+alias plsInstall="sudo pacman -Syu --needed"
+
+# Assembly cross compiler
+alias ass="arm-linux-gnueabihf-gcc -static"
+alias qua="qemu-arm"
+alias assd="~/.config/zsh/assd.zsh"
 
 # System alias
 alias battery="cat /sys/class/power_supply/BAT1/capacity"
