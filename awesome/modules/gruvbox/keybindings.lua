@@ -38,9 +38,9 @@ awful.keyboard.append_global_keybindings({
               {description = "show the menubar", group = "launcher"}),
 	awful.key({modkey}, "b", function() awful.spawn("chromium") end,
 			  {description = "open chromium", group = "launcher"}),
-	awful.key({},"XF86AudioRaiseVolume", function() awful.spawn.with_shell(terminal.." -e wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+") end,
+	awful.key({},"XF86AudioRaiseVolume", function() awful.spawn.easy_async_with_shell("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ &") end,
 			  {description = "Increase volume by 5%", group = "client"}),
-	awful.key({},"XF86AudioLowerVolume",function ()	awful.spawn(terminal.." -e wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-") end,
+	awful.key({},"XF86AudioLowerVolume",function ()	awful.spawn.easy_async_with_shell("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- &") end,
 			  {description = "Decrease volume by 5%", group = "client"}),
 })
 
