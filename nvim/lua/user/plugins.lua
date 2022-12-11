@@ -64,6 +64,10 @@ return packer.startup(function(use)
 	-- Debugger
 	use 'mfussenegger/nvim-dap'
 
+	-- Mason
+	use "williamboman/mason.nvim"
+	use "williamboman/mason-lspconfig.nvim"
+
 	-- Telescope
 	use { "nvim-telescope/telescope.nvim", branch = '0.1.x' } -- Highly extendable fuzzy finder over lists
 	use "nvim-telescope/telescope-file-browser.nvim" -- Extension for telescope
