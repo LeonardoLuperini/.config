@@ -60,7 +60,7 @@ return packer.startup(function(use)
 	use 'hrsh7th/nvim-cmp' -- Base plugin
 	use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" } -- Snippet engine
 	use 'saadparwaiz1/cmp_luasnip' -- make luasnip and cmp comunicate 
-	
+
 	-- Debugger
 	use 'mfussenegger/nvim-dap'
 
@@ -69,17 +69,24 @@ return packer.startup(function(use)
 	use "williamboman/mason-lspconfig.nvim"
 
 	-- Telescope
-	use { "nvim-telescope/telescope.nvim", branch = '0.1.x' } -- Highly extendable fuzzy finder over lists
+	use { "nvim-telescope/telescope.nvim", branch = "0.1.x" } -- Highly extendable fuzzy finder over lists
 	use "nvim-telescope/telescope-file-browser.nvim" -- Extension for telescope
 
 	-- Tree-sitter
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
 	-- LSP
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 
 	-- Ocaml
 	use 'jubnzv/virtual-types.nvim' -- Virtual-types for Ocaml
+
+	-- Surround
+	use {
+		"kylechui/nvim-surround",
+		tag = "*",
+		config = function () require("nvim-surround").setup() end
+	}
 
 	-- use {"akinsho/toggleterm.nvim", tag = '*'}
 
