@@ -1,6 +1,6 @@
 -- Set up nvim-cmp.
-local cmp = require"cmp"
-local luasnip = require"luasnip"
+local cmp = require "cmp"
+local luasnip = require "luasnip"
 
 local kind_icons = {
   Text = "",
@@ -41,7 +41,7 @@ cmp.setup({
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
     },
-    mapping = cmp.mapping.preset.insert(require("modules.keymaps").cmp),
+    mapping = cmp.mapping.preset.insert(require("user.keymaps").cmp),
     sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" }, -- For luasnip users.

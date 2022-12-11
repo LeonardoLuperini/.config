@@ -1,4 +1,4 @@
-local h = require "modules.lsp.handlers"
+local h = require "user.lsp.handlers"
 local util = require 'lspconfig.util'
 
 local root_files = {

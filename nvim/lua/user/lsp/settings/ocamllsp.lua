@@ -1,5 +1,5 @@
-local h = require "modules.lsp.handlers"
-local util = require 'lspconfig.util'
+local h = require "user.lsp.handlers"
+local util = require "lspconfig.util"
 
 require('lspconfig').ocamllsp.setup({
 	cmd = { "ocamllsp" },

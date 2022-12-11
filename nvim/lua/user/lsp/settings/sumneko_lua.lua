@@ -1,4 +1,4 @@
-local h = require "modules.lsp.handlers"
+local h = require "user.lsp.handlers"
 
 -- local sumneko_root_path = "/usr/lib/lua-language-server"
 -- local sumneko_binary = "/usr/bin/lua-language-server"

@@ -25,7 +25,7 @@ end
 
 
 
-local lsp_keymaps = require("modules.keymaps").lsp
+local lsp_keymaps = require("user.keymaps").lsp
 M.on_attach = function(client, bufnr)
   lsp_keymaps(client, bufnr)
 end
