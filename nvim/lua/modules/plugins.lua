@@ -52,6 +52,15 @@ return packer.startup(function(use)
 		config = function() require("nvim-autopairs").setup { map_cr = true } end
 	}
 
+	-- Completion
+	use 'hrsh7th/cmp-nvim-lsp' -- Completion using LSP
+	use 'hrsh7th/cmp-buffer' -- Completion using things in buffer
+	use 'hrsh7th/cmp-path' -- Completion using things in path
+	use 'hrsh7th/cmp-cmdline' -- Completion for the commands
+	use 'hrsh7th/nvim-cmp' -- Base plugin
+	use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" } -- Snippet engine
+	use 'saadparwaiz1/cmp_luasnip' -- make luasnip and cmp comunicate 
+	
 	-- Debugger
 	use 'mfussenegger/nvim-dap'
 
@@ -65,14 +74,8 @@ return packer.startup(function(use)
 	-- LSP
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 
-	-- Completion
-	use 'hrsh7th/cmp-nvim-lsp' -- Completion using LSP
-	use 'hrsh7th/cmp-buffer' -- Completion using things in buffer
-	use 'hrsh7th/cmp-path' -- Completion using things in path
-	use 'hrsh7th/cmp-cmdline' -- Completion for the commands
-	use 'hrsh7th/nvim-cmp' -- Base plugin
-	use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" } -- Snippet engine
-	use 'saadparwaiz1/cmp_luasnip' -- make luasnip and cmp comunicate 
+	-- Ocaml
+	use 'jubnzv/virtual-types.nvim' -- Virtual-types for Ocaml
 
 	-- use {"akinsho/toggleterm.nvim", tag = '*'}
 

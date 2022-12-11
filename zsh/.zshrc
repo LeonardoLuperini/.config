@@ -19,6 +19,9 @@ alias c="clear"
 alias pls="sudo"
 alias plsInstall="sudo pacman -Syu --needed"
 
+# O-caml
+alias ocamexec="~/.config/zsh/ocaml-exec.zsh" 
+
 # Assembly cross compiler
 alias ass="arm-linux-gnueabihf-gcc -static"
 alias qua="qemu-arm"
