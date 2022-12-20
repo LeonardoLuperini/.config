@@ -64,22 +64,22 @@ return packer.startup(function(use)
 	-- Debugger
 	use 'mfussenegger/nvim-dap'
 
+	-- LSP
+	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+	use 'j-hui/fidget.nvim' -- Standalone UI for nvim-lsp progress
+
 	-- Mason
 	use "williamboman/mason.nvim"
 	use "williamboman/mason-lspconfig.nvim"
 
-	-- Telescope
-	use { "nvim-telescope/telescope.nvim", branch = "0.1.x" } -- Highly extendable fuzzy finder over lists
-	use "nvim-telescope/telescope-file-browser.nvim" -- Extension for telescope
-
-	-- Tree-sitter
-	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-
-	-- LSP
-	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-
 	-- Ocaml
 	use 'jubnzv/virtual-types.nvim' -- Virtual-types for Ocaml
+
+	-- Statusline
+	use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
 
 	-- Surround
 	use {
@@ -87,6 +87,13 @@ return packer.startup(function(use)
 		tag = "*",
 		config = function () require("nvim-surround").setup() end
 	}
+
+	-- Telescope
+	use { "nvim-telescope/telescope.nvim", branch = "0.1.x" } -- Highly extendable fuzzy finder over lists
+	use "nvim-telescope/telescope-file-browser.nvim" -- Extension for telescope
+
+	-- Tree-sitter
+	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
 	-- use {"akinsho/toggleterm.nvim", tag = '*'}
 

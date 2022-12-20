@@ -39,5 +39,8 @@ if not status then print("Problems with completion in init.lua file") end
 status, error = pcall(require, "user.dap")
 if not status then print("Problems with dap in init.lua file") end
 
+status, error = pcall(require, "user.statusline")
+if not status then print("Problems with statusline in init.lua file") end
+
 -- status, error = pcall(require, "user.terminal")
 -- if not status then print("Problems with terminal in init.lua file") end
