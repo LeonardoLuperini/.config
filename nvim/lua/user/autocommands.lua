@@ -1,3 +1,4 @@
+--[[
 local function split (input_str, sep)
 	if sep == nil then sep = "%s" end
 	local t={}
@@ -11,6 +12,7 @@ local path = vim.api.nvim_buf_get_name(0)
 local separeted_path = split(path, "/")
 local name_with_exetension = separeted_path[#separeted_path]
 local name = split(name_with_exetension, "%.")[1]
+--]]
 
 --[[
 vim.api.nvim_create_autocmd({"BufWritePost"}, {

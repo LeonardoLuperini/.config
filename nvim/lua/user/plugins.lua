@@ -64,6 +64,8 @@ return packer.startup(function(use)
 	-- Debugger
 	use 'mfussenegger/nvim-dap'
 
+	-- Java
+
 	-- LSP
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 	use 'j-hui/fidget.nvim' -- Standalone UI for nvim-lsp progress
