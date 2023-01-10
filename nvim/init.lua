@@ -30,9 +30,6 @@ if not status then print("Problems with mason in init.lua file") end
 status, error = pcall(require, "user.lsp")
 if not status then print("Problems with lsp in init.lua file") end
 
-status, error = pcall(require, "user.lsp")
-if not status then print("Problems with lsp in init.lua file") end
-
 status, error = pcall(require, "user.completion")
 if not status then print("Problems with completion in init.lua file") end
 
