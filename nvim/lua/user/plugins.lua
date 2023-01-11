@@ -77,6 +77,9 @@ return packer.startup(function(use)
 	-- Ocaml
 	use 'jubnzv/virtual-types.nvim' -- Virtual-types for Ocaml
 
+	-- Rust
+	use 'simrat39/rust-tools.nvim'
+
 	-- Statusline
 	use {
 	  'nvim-lualine/lualine.nvim',
