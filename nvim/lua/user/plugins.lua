@@ -74,9 +74,6 @@ return packer.startup(function(use)
 	use "williamboman/mason.nvim"
 	use "williamboman/mason-lspconfig.nvim"
 
-	-- Ocaml
-	use 'jubnzv/virtual-types.nvim' -- Virtual-types for Ocaml
-
 	-- Rust
 	use 'simrat39/rust-tools.nvim'
 
