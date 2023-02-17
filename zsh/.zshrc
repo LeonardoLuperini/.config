@@ -29,6 +29,7 @@ alias assd="~/.config/zsh/assd.zsh"
 
 # System alias
 alias battery="cat /sys/class/power_supply/BAT1/capacity"
+alias battery-time="date +\"%T\" && cat /sys/class/power_supply/BAT1/capacity"
 alias get-vol="wpctl get-volume @DEFAULT_AUDIO_SINK@"
 
 # Lines configured by zsh-newuser-install
