@@ -12,6 +12,6 @@
 **/pulse/**
 **/dconf/**
 **/octave/**
-**/QtProject.conf/**
+**/QtProject.conf
 **/xorg/**
 **/nvim/plugin/**
