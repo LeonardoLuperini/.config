@@ -4,11 +4,11 @@ source $ZPLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
 source $ZPLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Alias
-# ls alias
-alias llah="ls -lah"
-alias la="ls -a"
-alias lac="ls -a --color=auto"
+# file-system alias
+alias llah="ls -lah --color=auto"
+alias la="ls -a --color=auto"
 alias ls="ls --color=auto"
+alias tree="tree -C"
 
 # Kitty alias
 alias im="kitty +kitten icat"
