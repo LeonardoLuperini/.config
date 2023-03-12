@@ -12,9 +12,6 @@ end
 -- Keybindings
 vim.g.mapleader = " "
 
--- Motions
-map("", "gl", "<C-End>")
-
 -- Copy paste keymaps
 map("v", "<Leader>y", '"+y')
 map("n", "<Leader>p", '"+p')
