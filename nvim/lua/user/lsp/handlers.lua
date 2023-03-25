@@ -35,5 +35,4 @@ local cmp_nvim_lsp = require "cmp_nvim_lsp"
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 
-
 return M

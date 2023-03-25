@@ -2,7 +2,7 @@ local o   = vim.o -- behaves like Let
 local opt = vim.opt -- behaves like Set
 
 -- :help options
-o.cmdheight      = 2                      -- more space in the neovim command line for displaying messages
+o.cmdheight      = 1                      -- more space in the neovim command line for displaying messages
 o.conceallevel   = 0                      -- so that `` is visible in markdown files
 o.fileencoding   = "utf-8"                -- the encoding written to a file
 o.hlsearch       = true                   -- highlight all matches on previous search pattern
