@@ -25,6 +25,20 @@ map("n", "<Leader>ff", "<cmd>Telescope find_files<cr>")
 map("n", "<Leader>fb", "<cmd>Telescope file_browser<cr>")
 map("n", "<Leader>gl", "<cmd>Telescope live_grep<cr>")
 
+-- I don't want to use arrow keys
+map("n", "<Up>", 	"<nop>")
+map("n", "<Down>", 	"<nop>")
+map("n", "<Left>", 	"<nop>")
+map("n", "<Right>", "<nop>")
+map("i", "<Up>", 	"<nop>")
+map("i", "<Down>", 	"<nop>")
+map("i", "<Left>", 	"<nop>")
+map("i", "<Right>", "<nop>")
+map("v", "<Up>", 	"<nop>")
+map("v", "<Down>", 	"<nop>")
+map("v", "<Left>", 	"<nop>")
+map("v", "<Right>", "<nop>")
+
 -- Indent Tabs
 map("v", "<Tab>", ">gv")
 map("v", "<S-Tab>", "<gv")
