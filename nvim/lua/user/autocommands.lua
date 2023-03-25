@@ -1,3 +1,11 @@
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	group = vim.api.nvim_create_augroup("FormatWhenWrite", { clear = true }),
+	pattern = { "*.c", "*.lua" },
+	callback = function()
+		vim.api.nvim_command(":Format")
+	end,
+})
+
 --[[
 local function split (input_str, sep)
 	if sep == nil then sep = "%s" end

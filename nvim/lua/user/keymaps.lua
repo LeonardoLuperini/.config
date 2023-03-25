@@ -38,6 +38,8 @@ map("n", "<Leader>h", "<C-W>H") -- Move the current window to the left
 map("n", "<Leader>k", "<C-W>K") -- Move the current window up
 map("n", "<Leader>j", "<C-W>J") -- Move the current window down
 
+-- Format
+map("n", "<leader>f", ":Format<cr>")
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))

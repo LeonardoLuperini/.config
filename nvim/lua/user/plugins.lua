@@ -64,6 +64,9 @@ return packer.startup(function(use)
 	-- Debugger
 	use 'mfussenegger/nvim-dap'
 
+	-- Formatter
+	use 'mhartington/formatter.nvim'
+
 	-- Java
 
 	-- LSP
