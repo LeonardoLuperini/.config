@@ -28,7 +28,10 @@ status, error = pcall(require, "user.mason")
 if not status then print("Problems with mason in init.lua file") end
 
 status, error = pcall(require, "user.lsp")
-if not status then print("Problems with lsp in init.lua file") end
+if not status then
+	print("Problems with lsp in init.lua file")
+	print(error)
+end
 
 status, error = pcall(require, "user.formatter")
 if not status then print("Problems with formatter in init.lua file") end
