@@ -1,3 +1,9 @@
+if command -v pacman > /dev/null; then
+	DISTRO="arch"
+elif command -v apt > /dev/null; then 
+	DISTRO="ubuntu"
+fi
+
 #Plugin
 source $ZPLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZPLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
@@ -20,8 +26,13 @@ alias pls="sudo"
 alias plsInstall="sudo pacman -Syu --needed"
 
 # java
-alias java8="/usr/lib/jvm/java-8-openjdk/jre/bin/java"
-alias javac8="/usr/lib/jvm/java-8-openjdk/bin/javac"
+if [[ "$DISTRO" == "arch" ]]; then
+	alias java8="/usr/lib/jvm/java-8-openjdk/jre/bin/java"
+	alias javac8="/usr/lib/jvm/java-8-openjdk/bin/javac"
+elif [[ "$DISTRO" == "ubuntu" ]]; then
+	alias java8="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
+	alias javac8="/lib/jvm/java-8-openjdk-amd64/bin/javac"
+fi
 
 # System alias
 alias battery="cat /sys/class/power_supply/BAT1/capacity"
