@@ -19,13 +19,9 @@ alias c="clear"
 alias pls="sudo"
 alias plsInstall="sudo pacman -Syu --needed"
 
-# O-caml
-alias ocamexec="~/.config/zsh/ocaml-exec.zsh" 
-
-# Assembly cross compiler
-alias ass="arm-linux-gnueabihf-gcc -static"
-alias qua="qemu-arm"
-alias assd="~/.config/zsh/assd.zsh"
+# java
+alias java8="/usr/lib/jvm/java-8-openjdk/jre/bin/java"
+alias javac8="/usr/lib/jvm/java-8-openjdk/bin/javac"
 
 # System alias
 alias battery="cat /sys/class/power_supply/BAT1/capacity"
