@@ -35,9 +35,14 @@ elif [[ "$DISTRO" == "ubuntu" ]]; then
 fi
 
 # System alias
-alias battery="cat /sys/class/power_supply/BAT1/capacity"
-alias battery-time="date +\"%T\" && cat /sys/class/power_supply/BAT1/capacity"
-alias get-vol="wpctl get-volume @DEFAULT_AUDIO_SINK@"
+if [[ "$DISTRO" == "arch" ]]; then
+	alias battery="cat /sys/class/power_supply/BAT1/capacity"
+	alias battery-time="date +\"%T\" && cat /sys/class/power_supply/BAT1/capacity"
+	alias get-vol="wpctl get-volume @DEFAULT_AUDIO_SINK@"
+fi
+
+# Gradle
+alias gra="./gradlew"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
