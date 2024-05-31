@@ -135,10 +135,8 @@ theme.icon_theme = nil
 rnotification.connect_signal('request::rules', function()
     rnotification.append_rule {
         rule       = { urgency = 'critical' },
-        properties = { bg = '#ff0000', fg = '#ffffff' }
+        properties = { bg = theme.red_l, fg = theme.fg_normal }
     }
 end)
 
 return theme
-
--- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

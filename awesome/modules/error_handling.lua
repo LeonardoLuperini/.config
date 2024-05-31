@@ -1,7 +1,3 @@
---[[===============================
-	=		Error Handling		  =
-	===============================]]
-
 local naughty = require("naughty")
 
 -- {{{ Error handling

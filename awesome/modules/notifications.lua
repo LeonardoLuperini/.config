@@ -1,7 +1,3 @@
---[[===============================
-	=		 Mouse bindings		  =
-	===============================]]
-
 -- Standard awesome library
 local awful = require("awful")
 

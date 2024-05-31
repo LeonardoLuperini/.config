@@ -1,11 +1,8 @@
---[[===============================
-	=	  Variable definitions	  =
-	===============================]]
 
 -- This is used later as the default terminal and editor to run.
-terminal = os.getenv("TERM")
-editor = os.getenv("EDITOR")
-editor_cmd = terminal .. " -e " .. editor
+Terminal = os.getenv("TERM")
+Editor = os.getenv("EDITOR")
+Editor_cmd = Terminal .. " -e " .. Editor
 
 -- Default modkey.
-modkey = "Mod4"
+Modkey = "Mod4"

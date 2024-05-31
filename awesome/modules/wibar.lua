@@ -1,8 +1,3 @@
---[[===============================
-	=			 Wibar			  =
-	===============================]]
-
-
 -- Standard awesome library
 local awful = require("awful")
 
@@ -15,24 +10,28 @@ local naughty = require("naughty")
 -- Declarative object management
 local menubar = require("menubar")
 
--- {{{ Wibar
+local printn = require("modules.utils").p
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+Mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+Mytextclock = wibox.widget.textclock()
 
-screen.connect_signal("request::desktop_decoration", function(s)
-    -- Each screen has its own tag table.
+local function tags(s) -- Each screen has its own tag table.
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+end
 
-    -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
+local function promptbox(s) -- Create a promptbox for each screen
+	s.prompt_box = awful.widget.prompt()
+	s.prompt_box.with_shell = true
+	s.prompt_box.prompt = "Run: "
+end
 
+local function layout_images(s)
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
-    s.mylayoutbox = awful.widget.layoutbox {
+    s.layout_box = awful.widget.layoutbox {
         screen  = s,
         buttons = {
             awful.button({ }, 1, function () awful.layout.inc( 1) end),
@@ -41,20 +40,21 @@ screen.connect_signal("request::desktop_decoration", function(s)
             awful.button({ }, 5, function () awful.layout.inc( 1) end),
         }
     }
+end
 
-    -- Create a taglist widget
-    s.mytaglist = awful.widget.taglist {
+local function tag_list(s) -- Create a taglist widget
+    s.tag_list = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
         buttons = {
             awful.button({ }, 1, function(t) t:view_only() end),
-            awful.button({ modkey }, 1, function(t)
+            awful.button({ Modkey }, 1, function(t)
                                             if client.focus then
                                                 client.focus:move_to_tag(t)
                                             end
                                         end),
             awful.button({ }, 3, awful.tag.viewtoggle),
-            awful.button({ modkey }, 3, function(t)
+            awful.button({ Modkey }, 3, function(t)
                                             if client.focus then
                                                 client.focus:toggle_tag(t)
                                             end
@@ -63,9 +63,10 @@ screen.connect_signal("request::desktop_decoration", function(s)
             awful.button({ }, 5, function(t) awful.tag.viewnext(t.screen) end),
         }
     }
+end
 
-    -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist {
+local function task_list(s) -- Create a tasklist widget
+    s.task_list = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
         buttons = {
@@ -77,6 +78,14 @@ screen.connect_signal("request::desktop_decoration", function(s)
             awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
         }
     }
+end
+
+local function top_bar(s)
+	tags(s)
+	promptbox(s)
+	layout_images(s)
+	tag_list(s)
+	task_list(s)
 
     -- Create the wibox
     s.mywibox = awful.wibar {
@@ -87,20 +96,19 @@ screen.connect_signal("request::desktop_decoration", function(s)
             { -- Left widgets
                 layout = wibox.layout.fixed.horizontal,
                 -- mylauncher,
-                s.mytaglist,
-                s.mypromptbox,
+                s.tag_list,
+                s.prompt_box,
             },
-            s.mytasklist, -- Middle widget
+            s.task_list, -- Middle widget
             { -- Right widgets
                 layout = wibox.layout.fixed.horizontal,
-                mykeyboardlayout,
+                Mykeyboardlayout,
                 wibox.widget.systray(),
-                mytextclock,
-                s.mylayoutbox,
+                Mytextclock,
+                s.layout_box,
             },
         }
     }
-end)
+end
 
--- }}}
-
+screen.connect_signal("request::desktop_decoration", top_bar)
