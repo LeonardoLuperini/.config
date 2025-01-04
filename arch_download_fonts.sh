@@ -1,5 +1,5 @@
 #!/bin/sh
-cd ../.local/share/fonts 
+cd ../.local/share/fonts
 
 # Bold
 wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Bold/complete/JetBrains%20Mono%20Bold%20Nerd%20Font%20Complete.ttf?raw=true
@@ -16,7 +16,10 @@ wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrains
 cd ~
 
 set -e
-if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
+if [[ $(id -u) -ne 0 ]]; then
+  echo "Please run as root"
+  exit 1
+fi
 echo "Setting up Noto Emoji font..."
 # 1 - install  noto-fonts-emoji package
 pacman -S noto-fonts-emoji powerline-fonts --needed
@@ -55,7 +58,7 @@ echo "<?xml version="1.0"?>
  </alias>
 </fontconfig>
 
-" > /etc/fonts/local.conf
+" >/etc/fonts/local.conf
 # 3 - update font cache via fc-cache
 fc-cache
 echo "Noto Emoji Font installed! You may need to restart applications like chrome. If chrome displays no symbols or no letters, your default font contains emojis."

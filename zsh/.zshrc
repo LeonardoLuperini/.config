@@ -69,6 +69,3 @@ compinit
 # Starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$ZDOTDIR/starship.toml
-
-# opam configuration
-[[ ! -r /home/leo/.opam/opam-init/init.zsh ]] || source /home/leo/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
