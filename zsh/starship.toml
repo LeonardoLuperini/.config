@@ -3,6 +3,7 @@
 
 # Inserts a blank line between shell prompts
 add_newline = true
+command_timeout = 1000 # 1 second
 
 # The character module shows a character (usually an arrow) beside where the text is entered in your terminal.
 #[character] # The name of the module we are configuring is "character"
@@ -18,9 +19,6 @@ disabled = true
 #format = "[$user]($style) "
 #disabled = false
 #show_always = true
-
-[lua]
-format = "via [ $version](bold blue) "
 
 [git_status]
 format = '([\[$ahead_behind\]]($style) )'
