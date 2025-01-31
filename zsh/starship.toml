@@ -20,21 +20,6 @@ disabled = true
 #disabled = false
 #show_always = true
 
-[lua]
-format = "via [🌕 $version](bold blue)"
-
-[kotlin]
-symbol = "🇰"
-
-[zig]
-symbol = " "
-
-[java]
-symbol = " "
-
-[gradle]
-symbol = " "
-
 [git_status]
 format = '([\[$ahead_behind\]]($style) )'
 conflicted = " conflicted "

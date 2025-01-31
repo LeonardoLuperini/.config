@@ -4,6 +4,16 @@ elif command -v apt > /dev/null; then
 	DISTRO="ubuntu"
 fi
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ]; then
+  PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
+
 #Plugin
 source $ZPLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZPLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
@@ -69,3 +79,12 @@ compinit
 # Starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$ZDOTDIR/starship.toml
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
