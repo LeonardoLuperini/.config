@@ -72,3 +72,6 @@ export STARSHIP_CONFIG=$ZDOTDIR/starship.toml
 
 # opam configuration
 [[ ! -r /home/leo/.opam/opam-init/init.zsh ]] || source /home/leo/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# zig configuration
+export PATH=$PATH:~/zig-linux-x86_64-0.13.0-dev.211+6a65561e3/
