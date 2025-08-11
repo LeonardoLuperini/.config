@@ -1,3 +1,4 @@
+DISTRO=$(cat /etc/*-release)
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
@@ -7,10 +8,6 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -d "/opt/microchip/xc32/v4.60/bin" ]; then
-  PATH="$PATH:/opt/microchip/xc32/v4.60/bin"
 fi
 
 #Plugin
@@ -25,23 +22,8 @@ alias la="ls -a --color=auto"
 alias ls="ls --color=auto"
 alias tree="tree -C"
 
-# Kitty alias
-alias im="kitty +kitten icat"
-alias th="kitty +kitten themes" 
-
 # Misc alias
 alias c="clear"
-alias pls="sudo"
-alias plsInstall="sudo pacman -Syu --needed"
-
-# java
-if [[ "$DISTRO" == "arch" ]]; then
-	alias java8="/usr/lib/jvm/java-8-openjdk/jre/bin/java"
-	alias javac8="/usr/lib/jvm/java-8-openjdk/bin/javac"
-elif [[ "$DISTRO" == "ubuntu" ]]; then
-	alias java8="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
-	alias javac8="/lib/jvm/java-8-openjdk-amd64/bin/javac"
-fi
 
 # Gradle
 alias gra="./gradlew"
@@ -72,13 +54,11 @@ compinit
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$ZDOTDIR/starship.toml
 
-# opam configuration
-[[ ! -r /home/leo/.opam/opam-init/init.zsh ]] || source /home/leo/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
 # zig configuration
 if [[ -d "$HOME/zig-x86_64-linux-0.15.0-dev.1092+d772c0627/" ]]; then
   PATH="$PATH:$HOME/zig-x86_64-linux-0.15.0-dev.1092+d772c0627/"
 fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
