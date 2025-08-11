@@ -1,8 +1,3 @@
-if command -v pacman > /dev/null; then
-	DISTRO="arch"
-elif command -v apt > /dev/null; then 
-	DISTRO="ubuntu"
-fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
@@ -12,6 +7,10 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "/opt/microchip/xc32/v4.60/bin" ]; then
+  PATH="$PATH:/opt/microchip/xc32/v4.60/bin"
 fi
 
 #Plugin
@@ -42,13 +41,6 @@ if [[ "$DISTRO" == "arch" ]]; then
 elif [[ "$DISTRO" == "ubuntu" ]]; then
 	alias java8="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
 	alias javac8="/lib/jvm/java-8-openjdk-amd64/bin/javac"
-fi
-
-# System alias
-if [[ "$DISTRO" == "arch" ]]; then
-	alias battery="cat /sys/class/power_supply/BAT1/capacity"
-	alias battery-time="date +\"%T\" && cat /sys/class/power_supply/BAT1/capacity"
-	alias get-vol="wpctl get-volume @DEFAULT_AUDIO_SINK@"
 fi
 
 # Gradle
@@ -84,8 +76,9 @@ export STARSHIP_CONFIG=$ZDOTDIR/starship.toml
 [[ ! -r /home/leo/.opam/opam-init/init.zsh ]] || source /home/leo/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # zig configuration
-export PATH=$PATH:~/zig-linux-x86_64-0.13.0-dev.211+6a65561e3/
-
+if [[ -d "$HOME/zig-x86_64-linux-0.15.0-dev.1092+d772c0627/" ]]; then
+  PATH="$PATH:$HOME/zig-x86_64-linux-0.15.0-dev.1092+d772c0627/"
+fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
