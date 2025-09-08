@@ -12,3 +12,4 @@ zsh/plugins
 !arch_download_fonts.sh
 !ghostty
 !hypr
+!eww
