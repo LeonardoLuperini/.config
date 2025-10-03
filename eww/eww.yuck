@@ -1,6 +1,6 @@
-(defwidget bar [id]
+(defwidget bar [screen monitor]
     (centerbox :orientation "h"
-        (workspaces :id id)
+        (workspaces :monitor monitor)
         (music)
         (sidestuff)))
 
@@ -14,47 +14,57 @@
                       :icon-size 18)
           time))
 
-(defwidget workspaces [id]
+(defwidget workspaces [monitor]
     (box  :class "workspaces"
           :orientation "h"
           :space-evenly true
           :halign "start"
-          (stack :selected {id == "primary" ? 1 : 2}
-              (box
-                (button :onclick "hyprctl dispatch workspace 1")
-                (button :onclick "hyprctl dispatch workspace 2")
-                (button :onclick "hyprctl dispatch workspace 3"))
-              (box
-                (button :onclick "hyprctl dispatch workspace 4")
-                (button :onclick "hyprctl dispatch workspace 5")
-                (button :onclick "hyprctl dispatch workspace 6")))))
+          :vallign "center"
+          (for entry in {jq(workspaces,'[.[] | select(.monitor == "${monitor}")]')}
+              (button :onclick "hyprctl dispatch workspace ${entry["workspaceString"]}"
+                      :vallign "center"
+                      :hexpand false))))
 
 (defwidget music []
     (box  :class "music"
           :orientation "h"
           :space-evenly false
           :halign "center"
-          {music != "" ? "🎵${music}" : ""}))
-
-
-(deflisten music :initial ""
-    "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+          (box
+            (label :text music-title
+                   :limit-width 25))))
 
 (deflisten volume :initial "vol"
-    "scripts/get-vol.sh")
+    "bash ./scripts/get-vol.sh")
 
-(defpoll time :interval "10s"
+(defpoll time
+    :initial "33:33"
+    :interval "10s"
     "date '+%H:%M'")
 
-(defwindow bar [id]
-          :monitor {id == "primary" ? 1 : 0}
-          :windowtype "dock"
-          :geometry (geometry :x "0%"
-                              :y "0%"
-                              :width "100%"
-                              :height "10px"
-                              :anchor "top center")
-          :exclusive true 
-          (bar :id id))
+(defpoll workspaces
+    :interval "1h"
+    :initial "[1,2]"
+    `bash ./scripts/get-workspaces.sh`)
+
+(deflisten music-title :initial "" 
+    "playerctl --player=spotify --follow metadata --format '{{ title }}' || true")
+
+(deflisten music-artist :initial "" 
+    "playerctl --player=spotify --follow metadata --format '{{ artist }}' || true")
+
+(deflisten music-cover :initial "" 
+    "playerctl --player=spotify --follow metadata --format {{mpris:artUrl}}")
+
+
+(defwindow bar [screen monitor]
+    :monitor screen
+    :geometry (geometry :x "0%"
+                        :y "0%"
+                        :width "100%"
+                        :height "10px"
+                        :anchor "top center")
+    :exclusive true
+    (bar :screen screen :monitor monitor))
 
 ; vim: ts=4 sw=4

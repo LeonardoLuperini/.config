@@ -2,10 +2,7 @@
 
 cd $HOME
 
-touch .zshenv
-
-echo "ZDOTDIR=$HOME/.config/zsh
-ZPLUGINS=$HOME/.config/zsh/plugins" > .zshenv
+ls -s .config/zsh/.zshenv .zshenv
 
 cd $HOME/.config/zsh/
 

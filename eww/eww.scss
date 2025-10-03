@@ -1,10 +1,11 @@
 * {
   all: unset; // Unsets everything so you can style everything from scratch
+  font-weight: bold;
 }
 
 // Global Styles
 .bar {
-  min-height: 20px;
+  min-height: 12px;
   padding: 5px;
   background-color: #3a3a3a;
   color: #b0b4bc;
@@ -23,4 +24,8 @@
 
 .workspaces button:hover {
   background-color: #b0b4bc;
+}
+
+.music {
+  font-size: 100%; 
 }
