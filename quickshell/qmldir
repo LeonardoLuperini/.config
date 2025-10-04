@@ -1,0 +1,6 @@
+module MyBar
+singleton Time Time.qml
+Clock Clock.qml
+Bar Bar.qml
+TextBar TextBar.qml
+WorkspaceButton WorkspaceButton.qml
