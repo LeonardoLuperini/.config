@@ -1,8 +1,6 @@
 #! /bin/zsh
 
-cd $HOME
-
-ls -s .config/zsh/.zshenv .zshenv
+ln -s ~/.config/zsh/.zshenv ~/.zshenv
 
 cd $HOME/.config/zsh/
 
