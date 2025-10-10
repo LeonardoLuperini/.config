@@ -17,7 +17,7 @@ Scope {
             property string currentBarScreen: modelData.name
             color: MyStyle.bg0_h
             property bool batteryPresent: {
-                const batteryDevices = UPower.devices.values.filter(dev => dev.type == UPowerDeviceType.battery);
+                const batteryDevices = UPower.devices.values.filter(dev => dev.type == UPowerDeviceType.Battery);
                 return batteryDevices.length > 0;
             }
 
