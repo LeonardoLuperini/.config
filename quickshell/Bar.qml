@@ -1,5 +1,6 @@
 import Quickshell
 import Quickshell.Hyprland
+import Quickshell.Services.UPower
 import QtQuick
 import "."
 
@@ -15,6 +16,10 @@ Scope {
             required property var modelData
             property string currentBarScreen: modelData.name
             color: MyStyle.bg0_h
+            property bool batteryPresent: {
+                const batteryDevices = UPower.devices.values.filter(dev => dev.type == UPowerDeviceType.battery);
+                return batteryDevices.length > 0;
+            }
 
             anchors {
                 top: true
@@ -41,7 +46,7 @@ Scope {
 
             AudioDisplay {
                 id: audio
-                anchors.right: battery.left
+                anchors.right: (panel.batteryPresent) ? battery.left : clock.left
                 anchors.rightMargin: 5
                 anchors.verticalCenter: parent.verticalCenter
             }
@@ -51,6 +56,7 @@ Scope {
                 anchors.right: clock.left
                 anchors.rightMargin: 5
                 anchors.verticalCenter: parent.verticalCenter
+                visible: panel.batteryPresent
             }
 
             Clock {
