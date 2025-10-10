@@ -5,7 +5,7 @@ Text {
     property bool bold: true
     property int pointSize: 12
     property string family: "Arial"
-    property color col: "#ebdbb2"
+    property color col: MyStyle.fg
 
     // Bind the actual font
     font.bold: bold

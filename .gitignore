@@ -11,6 +11,8 @@ zsh/plugins
 !test-fonts.sh
 !arch_download_fonts.sh
 !ghostty
+ghostty/local
 !hypr
+hypr/local/*
 !eww
 !quickshell

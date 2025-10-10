@@ -13,8 +13,8 @@ Scope {
         PanelWindow {
             id: panel
             required property var modelData
-            property var screen: modelData.name
-            color: "#1d2021"
+            property string currentBarScreen: modelData.name
+            color: MyStyle.bg0_h
 
             anchors {
                 top: true
@@ -24,25 +24,37 @@ Scope {
 
             implicitHeight: 30
 
-            Row {
-                property var screen: panel.screen
+            Workspaces {
+                currentBarScreen: panel.currentBarScreen
                 anchors.left: parent.left
                 anchors.leftMargin: 5
                 anchors.verticalCenter: parent.verticalCenter
-                spacing: 5
-                Repeater {
-                    model: 6
-                    property var screen: parent.screen
-                    WorkspaceButton {
-                        screen: parent.screen
-                    }
-                }
+                space: 5
             }
-            TextBar {
-                text: panel.screen
-                anchors.centerIn: parent
+
+            NetworkDisplay {
+                id: network
+                anchors.right: audio.left
+                anchors.rightMargin: 5
+                anchors.verticalCenter: parent.verticalCenter
             }
+
+            AudioDisplay {
+                id: audio
+                anchors.right: battery.left
+                anchors.rightMargin: 5
+                anchors.verticalCenter: parent.verticalCenter
+            }
+
+            BatteryDisplay {
+                id: battery
+                anchors.right: clock.left
+                anchors.rightMargin: 5
+                anchors.verticalCenter: parent.verticalCenter
+            }
+
             Clock {
+                id: clock
                 anchors.right: parent.right
                 anchors.rightMargin: 5
                 anchors.verticalCenter: parent.verticalCenter

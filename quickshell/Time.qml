@@ -2,7 +2,6 @@
 pragma Singleton
 
 import Quickshell
-import QtQuick
 
 // your singletons should always have Singleton as the type
 Singleton {

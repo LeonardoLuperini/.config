@@ -4,3 +4,11 @@ Clock Clock.qml
 Bar Bar.qml
 TextBar TextBar.qml
 WorkspaceButton WorkspaceButton.qml
+singleton MyStyle MyStyle.qml
+Workspaces Workspaces.qml
+singleton Battery Battery.qml
+BatteryDisplay BatteryDisplay.qml
+singleton Audio Audio.qml
+AudioDisplay AudioDisplay.qml
+singleton Network Network.qml
+NetworkDisplay NetworkDisplay.qml
