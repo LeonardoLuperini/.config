@@ -13,6 +13,13 @@ if [[ -d "$HOME/eww-repo/target/release/" ]]; then
   alias eww_close="$HOME/.config/eww/close-eww.sh"
 fi
 
+PYENV_ROOT="$HOME/.pyenv"
+if [[ -d $PYENV_ROOT/bin ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init - zsh)"
+fi
+
 if uwsm check may-start; then
   exec uwsm start hyprland-uwsm.desktop
 fi

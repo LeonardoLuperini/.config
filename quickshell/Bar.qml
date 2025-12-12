@@ -37,6 +37,13 @@ Scope {
                 space: 5
             }
 
+            SysTrayDisplay {
+                id: systray
+                anchors.right: network.left
+                anchors.rightMargin: 5
+                anchors.verticalCenter: parent.verticalCenter
+            }
+
             NetworkDisplay {
                 id: network
                 anchors.right: audio.left

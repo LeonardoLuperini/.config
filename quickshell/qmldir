@@ -12,3 +12,4 @@ singleton Audio Audio.qml
 AudioDisplay AudioDisplay.qml
 singleton Network Network.qml
 NetworkDisplay NetworkDisplay.qml
+SysTrayDisplay SysTrayDisplay.qml
