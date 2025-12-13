@@ -3,8 +3,17 @@
 -- ensinst -> ENSure INSTalled
 local ensinst = { 'vim', 'python', 'make', 'c++', 'c', 'lua', 'zig', 'rust', 'javascript', 'zig' }
 
+vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/nvim-treesitter")
+local foundnvts, nvts = pcall(require, 'nvim-treesitter')
+local pattern = {"NOTHING"}
+if foundnvts then
+  pattern = nvts.get_installed()
+else
+  print(nvts)
+end
+
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = require("nvim-treesitter").get_installed(),
+  pattern = pattern,
   callback = function()
     -- syntax highlighting, provided by Neovim
     vim.treesitter.start()
@@ -19,7 +28,7 @@ return {
   lazy = false,
   branch = 'main',
   build = function()
-    local nvts = require("nvim-treesitter")
+    local nvts = require('nvim-treesitter')
     local instservs = nvts.get_installed()
     local found
     for _, e in ipairs(ensinst) do
