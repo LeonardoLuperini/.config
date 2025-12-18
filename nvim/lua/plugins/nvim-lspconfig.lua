@@ -20,5 +20,16 @@ return {
       vim.lsp.config(lsp, conf)
       vim.lsp.enable(lsp)
     end
+
+    vim.api.nvim_create_autocmd('LspAttach', {
+      group = vim.api.nvim_create_augroup('my.lsp', {}),
+      callback = function(args)
+        local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+        if client:supports_method('textDocument/go-to-definition') then
+          vim.keymap.set("n", "grd", function() vim.lsp.buf.definition() end, { buffer = true })
+        end
+
+      end
+    })
   end
 }

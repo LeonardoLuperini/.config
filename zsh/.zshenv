@@ -1,5 +1,5 @@
-ZDOTDIR=/home/leo/.config/zsh
-ZPLUGINS=/home/leo/.config/zsh/plugins
+ZDOTDIR=$HOME/.config/zsh
+ZPLUGINS=$HOME/.config/zsh/plugins
 
 #intellij idea
 if [[ -d "$HOME/programs/intellij-idea-comunity/bin" ]]; then
