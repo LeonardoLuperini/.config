@@ -1,7 +1,5 @@
 /*
-
 !.gitignore
-!kitty
 !nvim
 nvim/lazy-lock.json
 nvim/lazyvim.json
@@ -14,5 +12,4 @@ zsh/plugins
 ghostty/local
 !hypr
 hypr/local/*
-!eww
 !quickshell
