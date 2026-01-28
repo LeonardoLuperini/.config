@@ -54,9 +54,9 @@ compinit
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$ZDOTDIR/starship.toml
 
-# zig configuration
-if [[ -d "$HOME/zig-x86_64-linux-0.15.0-dev.1092+d772c0627/" ]]; then
-  PATH="$PATH:$HOME/zig-x86_64-linux-0.15.0-dev.1092+d772c0627/"
+# zls
+if [[ -d "$HOME/.local/src/zls/zig-out/bin" ]]; then
+  PATH="$PATH:$HOME/.local/src/zls/zig-out/bin"
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
