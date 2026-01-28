@@ -8,6 +8,9 @@ return {
     servers = {
       lua_ls = {},
       ccls = {},
+      zls = {
+        filetypes = { "zig", "zir", "zon" }
+      }
     }
   },
   config = function(_, opts)
