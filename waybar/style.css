@@ -1,0 +1,142 @@
+* {
+    margin: 0 0px;
+    border-width: 0px;
+    padding: 0 0px;
+    font-family: Noto, sans-serif;
+    font-size: 15px;
+    min-height: 0px;
+    min-width: 0px;
+    border-radius: 5px;
+}
+
+window#waybar {
+    min-width: 0px;
+    min-height: 15px;
+    background-color: rgba(0,0,0,0);
+    border-bottom: 0px;
+    color: #FBF1C7;
+    transition-property: background-color;
+    transition-duration: .5s;
+    font-weight: 500;
+}
+
+button { }
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover { }
+
+/* ---- LEFT ------ */
+
+#custom-power {
+    font-size: 22px;
+    margin-right: 5px;
+    background: #1D2021;
+    min-width: 25px;
+    min-height: 15px;
+    padding: 0;
+}
+
+#workspaces {
+    background: #1D2021;
+
+    margin: 0px 5px;
+    padding: 5px
+}
+
+#workspaces button {
+    all: unset;
+    background-color: #504945;
+
+    min-width: 15px;
+    min-height: 15px;
+
+    margin: 0 4px;
+    padding: 0;
+
+    border-radius: 9999px;
+    border: 2px solid #FBF1C7;
+
+    box-shadow: none;
+}
+
+/* ensure any children (labels/icons) don't reserve space */
+#workspaces button * {
+    font-size: 0;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    color: transparent;
+}
+
+/* Active / empty / urgent styles */
+
+#workspaces button.empty {
+    border-color: #504945;
+    background-color: #504945;
+}
+#workspaces button.urgent {
+    border-color: #EB4D4B;
+    background-color: #EB4D4B;
+}
+#workspaces button.active {
+    background-color: #FBF1C7;
+    border-color: #FBF1C7;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ---- CENTER ---- */
+#custom-media {
+    background-color: #1D2021;
+    padding: 0px 10px;
+}
+
+/* ---- RIGHT ----- */
+#tray,
+#custom-pomodoro,
+#network,
+#wireplumber,
+#backlight,
+#battery,
+#clock,
+#bluetooth {
+    background-color: #1D2021;
+    margin-left: 5px;
+    padding: 0 10px;
+}
+
+#tray {
+    min-width: 0px;
+    min-height: 0px;
+}
+
+#tray.empty {
+    background-color: #ffffff;
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

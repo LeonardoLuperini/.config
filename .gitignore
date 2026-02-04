@@ -12,4 +12,4 @@ zsh/plugins
 ghostty/local
 !hypr
 hypr/local/*
-!quickshell
+!waybar

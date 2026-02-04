@@ -1,0 +1,122 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 3,
+    "margin-right": 3,
+    "margin-bottom": 0,
+    "margin-left": 3,
+
+    "modules-left": [
+        "custom/power",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/media"
+    ],
+    "modules-right": [
+        "tray",
+        "custom/pomodoro",
+        "bluetooth",
+        "network",
+        "wireplumber", 
+        "backlight",
+        "battery",
+        "clock"
+    ],
+    // ---- LEFT ------
+    "custom/power": {
+        "format" : "⏻",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    },
+    "hyprland/workspaces": {
+        "format": ""
+    },
+    // ---- CENTER -----
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "~/.config/waybar/mediaplayer.py 2> /dev/null"
+    },
+
+    // ---- RIGHT ------
+    "bluetooth": {
+        "format": "󰂲",
+        "format-on": "{icon}",
+        "format-off": "{icon}", 
+        "format-connected":"{icon}",
+        "format-icons":{
+            "on":"󰂯",
+            "off": "󰂲",
+            "connected": "󰂱"
+            },
+        "on-click": "blueman-manager",
+        "tooltip-format-connected":"{device_enumerate}"
+    },
+    "clock": {
+        "timezone": "Europe/Rome",
+        "tooltip": false,
+        "format": "{:%H:%M}",
+        "interval": 1
+    },
+    "network": {
+        "format-wifi": "󰤢",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤠",
+        "interval": 5,
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "nm-connection-editor"
+    },
+    "backlight": {
+        "format": "{icon}  {percent}%",
+        "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
+        "tooltip": false
+    },
+
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "on-click": "helvum",
+        "format-icons": ["", "", ""]
+    },
+    "battery": {
+        "interval":2,
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "custom/pomodoro": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "waybar-module-pomodoro --no-work-icons",
+        "on-click": "waybar-module-pomodoro toggle",
+        "on-click-right": "waybar-module-pomodoro reset"
+    },
+    "tray": {
+        "icon-size": 19,
+        "spacing": 5
+    }
+}
