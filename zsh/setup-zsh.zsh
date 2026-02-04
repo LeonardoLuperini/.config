@@ -1,6 +1,7 @@
 #! /bin/zsh
 
 ln -s ~/.config/zsh/.zshenv ~/.zshenv
+ln -s ~/.config/zsh/.zprofile ~/.zprofile
 
 cd $HOME/.config/zsh/
 
