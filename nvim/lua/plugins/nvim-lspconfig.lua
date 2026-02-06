@@ -9,7 +9,7 @@ return {
       lua_ls = {},
       ccls = {},
       zls = {
-        filetypes = { "zig", "zir", "zon" }
+        filetypes = { "zig", "zir" }
       }
     }
   },
