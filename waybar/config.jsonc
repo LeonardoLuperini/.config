@@ -15,7 +15,6 @@
     ],
     "modules-right": [
         "tray",
-        "custom/pomodoro",
         "bluetooth",
         "network",
         "wireplumber", 

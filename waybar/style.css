@@ -84,10 +84,6 @@ button:hover { }
     border-color: #FBF1C7;
 }
 
-#battery {
-    background-color: #ffffff;
-    color: #000000;
-}
 
 /* ---- CENTER ---- */
 #custom-media {
@@ -128,6 +124,10 @@ button:hover { }
         background-color: #ffffff;
         color: #000000;
     }
+}
+
+#battery {
+    color: #FBF1C7;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
