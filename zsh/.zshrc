@@ -10,6 +10,11 @@ if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
 
+# set PATH to include crate if cargo exists
+if [[ -d "$HOME/.cargo/bin" ]]; then
+  PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 #Plugin
 source $ZPLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZPLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
