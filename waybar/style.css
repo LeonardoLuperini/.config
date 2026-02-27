@@ -12,7 +12,7 @@
 window#waybar {
     min-width: 0px;
     min-height: 15px;
-    background-color: rgba(0,0,0,0);
+    background-color: #1D2021;
     border-bottom: 0px;
     color: #FBF1C7;
     transition-property: background-color;
