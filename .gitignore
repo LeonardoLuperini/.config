@@ -9,11 +9,16 @@ ghostty/local
 !hypr
 hypr/local/*
 
+!niri
+
 !nvim
 nvim/lazy-lock.json
 nvim/lazyvim.json
 
 !rofi
+
+!systemd/user/udiskie.service
+!systemd/user/swaybg.service
 
 !test-fonts.sh
 
