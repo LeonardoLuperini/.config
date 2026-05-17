@@ -17,6 +17,10 @@ nvim/lazyvim.json
 
 !rofi
 
+!systemd
+systemd/*
+!systemd/user
+systemd/user/*
 !systemd/user/udiskie.service
 !systemd/user/swaybg.service
 
