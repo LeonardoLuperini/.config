@@ -1,97 +1,97 @@
+@define-color bg_h          #1D2021;
+@define-color bg0           #282828;
+@define-color bg1           #3C3836;
+@define-color bg2           #504945;
+@define-color bg3           #665C54;
+@define-color bg4           #7C6F64;
+@define-color fg0           #FBF1C7;
+@define-color fg1           #EBDBB2;
+@define-color fg2           #D5C4A1;
+@define-color fg3           #BDAE93;
+@define-color fg4           #A89984;
+@define-color red           #CC241D;
+@define-color green         #98971A;
+@define-color yellow        #D79921;
+@define-color blue          #458588;
+@define-color purple        #B16286;
+@define-color aqua          #689D6A;
+@define-color orange        #D65D0E;
+@define-color bright-red    #FB4934;
+@define-color bright-green  #B8BB26;
+@define-color bright-yellow #FABD2F;
+@define-color bright-blue   #83A598;
+@define-color bright-purple #D3869B;
+@define-color bright-aqua   #8EC07C;
+@define-color bright-orange #FE8019;
+@define-color gray          #928374;
+
 * {
     margin: 0 0px;
     border-width: 0px;
     padding: 0 0px;
-    font-family: Noto, sans-serif;
-    font-size: 15px;
     min-height: 0px;
     min-width: 0px;
     border-radius: 0px;
+
+    font-family: "Symbols Nerd Font", "Noto Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+
+    /* For Testing purpose */
+    /* border-width: 1; */
+    /* border-color: red; */
 }
 
 window#waybar {
-    min-width: 0px;
-    min-height: 15px;
-    background-color: #1D2021;
-    border-bottom: 0px;
-    color: #FBF1C7;
-    transition-property: background-color;
-    transition-duration: .5s;
-    font-weight: 500;
+    background-color: @bg_h;
+    color: @fg1;
 }
 
-button { }
+menu {
+    background-color: @bg0;
+    border-radius: 8px;
+    border: 1px solid @bg2;
+}
+
+menuitem {
+    color: @fg1;
+    padding: 4px 10px;
+}
+
+menuitem:hover {
+    background-color: @bg2;
+    color: @bright-yellow;
+}
+
+button {
+    color: inherit;
+    min-width: 1em;
+}
+ button label {
+    font-size: 18px;
+ }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover { }
-
-/* ---- LEFT ------ */
+#workspaces button:hover {
+    background-image: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background-color: @bg2;
+}
+#workspaces,
+#custom-power {
+    margin: 0px;
+    margin-right: 5px;
+    padding: 0;
+}
 
 #custom-power {
-    font-size: 22px;
-    margin-right: 5px;
-    background: #1D2021;
     min-width: 25px;
     min-height: 15px;
-    padding: 0;
-}
-
-#workspaces {
-    background: #1D2021;
-
-    margin: 0px 5px;
-    padding: 5px
-}
-
-#workspaces button {
-    all: unset;
-    background-color: #504945;
-
-    min-width: 15px;
-    min-height: 15px;
-
-    margin: 0 4px;
-    padding: 0;
-
-    border-radius: 9999px;
-    border: 2px solid #FBF1C7;
-
-    box-shadow: none;
-}
-
-/* ensure any children (labels/icons) don't reserve space */
-#workspaces button * {
-    font-size: 0;
-    min-width: 0;
-    min-height: 0;
-    padding: 0;
-    margin: 0;
-    color: transparent;
-}
-
-/* Active / empty / urgent styles */
-
-#workspaces button.empty {
-    border-color: #504945;
-    background-color: #504945;
-}
-#workspaces button.urgent {
-    border-color: #EB4D4B;
-    background-color: #EB4D4B;
-}
-#workspaces button.active {
-    background-color: #FBF1C7;
-    border-color: #FBF1C7;
 }
 
 
-/* ---- CENTER ---- */
-#custom-media {
-    background-color: #1D2021;
-    padding: 0px 10px;
-}
 
-/* ---- RIGHT ----- */
 #tray,
 #custom-pomodoro,
 #network,
@@ -100,9 +100,18 @@ button:hover { }
 #battery,
 #clock,
 #bluetooth {
-    background-color: #1D2021;
+    background-color: @bg_h;
     margin-left: 5px;
-    padding: 0 10px;
+    padding: 0 2px;
+}
+
+#workspaces button.active {
+    color: @fg0;
+    box-shadow: 0px -2px @fg0 inset;
+}
+
+#workspaces button.empty {
+    color: @bg4;
 }
 
 #tray {
@@ -115,28 +124,28 @@ button:hover { }
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: @fg1;
+    background-color: @green;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: @fg0;
+        color: @bg_h;
     }
-}
-
-#battery {
-    color: #FBF1C7;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: @red;
+    color: @bg1;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#clock {
+    margin-right: 5px;
 }

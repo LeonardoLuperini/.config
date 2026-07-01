@@ -1,4 +1,6 @@
 {
+    "reload_style_on_change": true,
+
     "layer": "top",
     "position": "top",
     "margin-top": 0,
@@ -8,10 +10,9 @@
 
     "modules-left": [
         "custom/power",
-        "hyprland/workspaces"
+        "niri/workspaces"
     ],
     "modules-center": [
-        "custom/media"
     ],
     "modules-right": [
         "tray",
@@ -29,39 +30,29 @@
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
         "menu-actions": {
-            "shutdown": "shutdown",
+            "shutdown": "shutdown now",
             "reboot": "reboot",
             "suspend": "systemctl suspend",
             "hibernate": "systemctl hibernate"
         }
     },
-    "hyprland/workspaces": {
-        "format": ""
-    },
-    // ---- CENTER -----
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "~/.config/waybar/mediaplayer.py 2> /dev/null"
-    },
 
+    "niri/workspaces": {
+    },
+    
     // ---- RIGHT ------
     "bluetooth": {
         "format": "󰂲",
         "format-on": "{icon}",
         "format-off": "{icon}", 
         "format-connected":"{icon}",
+        "format-no-controller": "{}",
         "format-icons":{
             "on":"󰂯",
             "off": "󰂲",
             "connected": "󰂱"
             },
+        "format-no-controller":"{icon}",
         "on-click": "blueman-manager",
         "tooltip-format-connected":"{device_enumerate}"
     },
@@ -86,11 +77,14 @@
     },
 
     "wireplumber": {
-        "format": "{volume}% {icon}",
-        "format-muted": "",
+        "format": "{icon}",
+        "format-alt": "{volume}% {icon}",
+        "format-alt-click": "click-right",
+        "format-muted": "",
         "on-click": "helvum",
         "format-icons": ["", "", ""]
     },
+
     "battery": {
         "interval":2,
         "states": {
@@ -106,13 +100,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "custom/pomodoro": {
-        "format": "{}",
-        "return-type": "json",
-        "exec": "waybar-module-pomodoro --no-work-icons",
-        "on-click": "waybar-module-pomodoro toggle",
-        "on-click-right": "waybar-module-pomodoro reset"
     },
     "tray": {
         "icon-size": 19,
