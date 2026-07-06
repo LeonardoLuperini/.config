@@ -81,7 +81,7 @@
         "format-alt": "{volume}% {icon}",
         "format-alt-click": "click-right",
         "format-muted": "",
-        "on-click": "helvum",
+        "on-click": "pavucontrol -t 3",
         "format-icons": ["", "", ""]
     },
 
