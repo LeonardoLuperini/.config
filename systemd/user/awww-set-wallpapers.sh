@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALL="$HOME/Pictures/wallpapers/a_person_riding_a_bicycle_on_a_hill_with_sunflowers.jpeg"
+WALL="$HOME/Pictures/wallpapers/medieval_city_scape_3840x2160.png"
 # BLUR="${XDG_CACHE_HOME:-$HOME/.cache}/awww/overview-blur.png"
 BLUR="$HOME/Pictures/temp/overview-blur.png"
 

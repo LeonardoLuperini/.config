@@ -5,7 +5,7 @@ Requires=awww-daemon.service awww-daemon-overview.service
 
 [Service]
 Type=oneshot
-ExecStart=~/.config/systemd/awww-set-wallpapers.sh
+ExecStart=%h/.config/systemd/user/awww-set-wallpapers.sh
 RemainAfterExit=yes
 
 [Install]
