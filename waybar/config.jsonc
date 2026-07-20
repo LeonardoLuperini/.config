@@ -17,7 +17,7 @@
     "modules-right": [
         "tray",
         "bluetooth",
-        "network",
+        // "network",
         "wireplumber", 
         "backlight",
         "battery",
@@ -62,14 +62,14 @@
         "format": "{:%H:%M}",
         "interval": 1
     },
-    "network": {
-        "format-wifi": "󰤢",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰤠",
-        "interval": 5,
-        "tooltip-format": "{essid} ({signalStrength}%)",
-        "on-click": "nm-connection-editor"
-    },
+    // "network": {
+    //     "format-wifi": "󰤢",
+    //     "format-ethernet": "󰈀",
+    //     "format-disconnected": "󰤠",
+    //     "interval": 5,
+    //     "tooltip-format": "{essid} ({signalStrength}%)",
+    //     "on-click": "ghostty -e nmtui"
+    // },
     "backlight": {
         "format": "{icon}  {percent}%",
         "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
