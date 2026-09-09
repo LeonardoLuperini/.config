@@ -304,8 +304,12 @@ window-rule {
 
 
 window-rule {
-    match app-id=r#"nm-connection-editor|blueman|org\.pipewire\.Helvum"#
+    match app-id=r#"nm-connection-editor|blueman|org\.pulseaudio\.pavucontrol"#
     open-floating true
+    default-column-width { proportion 0.30; }
+    default-window-height { proportion 0.50; }
+    min-width 300
+    min-height 300
 }
 
 // This is temporary just until i've finished my CG exam
@@ -314,6 +318,11 @@ window-rule {
     open-floating true
 }
 
+// This puts steam notification in the bottom left corner instead of the center of the screen
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
 
 // Put swaybg inside the overview backdrop.
 layer-rule {
@@ -340,7 +349,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Q hotkey-overlay-title="Ghostty"       { spawn-sh "ghostty --gtk-single-instance=true"; }
     Mod+R hotkey-overlay-title="Rofi"          { spawn-sh "rofi -show drun"; }
-    Mod+B hotkey-overlay-title="Brave"         { spawn-sh "brave --enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=basic"; }
+    Mod+B hotkey-overlay-title="Brave"         { spawn-sh "flatpak run com.brave.Browser --enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=basic"; }
     Mod+W hotkey-overlay-title="Waybar toggle" { spawn-sh "~/.config/waybar/toggle_waybar.sh"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -494,22 +503,22 @@ binds {
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
     // If the window is already in a column, they will expel it out.
-    Mod+BracketLeft  { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
+    // Mod+BracketLeft  { consume-or-expel-window-left; }
+    // Mod+BracketRight { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
+    // Mod+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    // Mod+Period { expel-window-from-column; }
 
     // Cycle through widths set in preset-column-widths.
-    Mod+G { switch-preset-column-width; }
+    // Mod+G { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
-    Mod+Shift+G { switch-preset-column-width-back; }
+    // Mod+Shift+G { switch-preset-column-width-back; }
 
-    Mod+Ctrl+Shift+G { switch-preset-window-height; }
-    Mod+Ctrl+G { reset-window-height; }
-
+    // Mod+Ctrl+Shift+G { switch-preset-window-height; }
+    // Mod+Ctrl+G { reset-window-height; }
+    Mod+D { switch-preset-column-width; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
