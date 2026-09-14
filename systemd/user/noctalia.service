@@ -1,0 +1,14 @@
+[Unit]
+Description=Noctalia desktop shell
+Documentation=https;//docs.noctalia.dev/noctalia
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/noctalia
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target
