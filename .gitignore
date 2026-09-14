@@ -22,7 +22,7 @@ systemd/*
 !systemd/user
 systemd/user/*
 !systemd/user/udiskie.service
-!systemd/user/awww*
+!systemd/user/noctalia*
 
 !test-fonts.sh
 
