@@ -6,16 +6,11 @@
 !ghostty
 ghostty/local
 
-!hypr
-hypr/local/*
-
 !niri
 
 !nvim
 nvim/lazy-lock.json
 nvim/lazyvim.json
-
-!rofi
 
 !systemd
 systemd/*
@@ -25,8 +20,6 @@ systemd/user/*
 !systemd/user/noctalia*
 
 !test-fonts.sh
-
-!waybar
 
 !zsh
 zsh/.zcompdump
