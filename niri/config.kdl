@@ -348,9 +348,13 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Q hotkey-overlay-title="Ghostty"       { spawn-sh "ghostty --gtk-single-instance=true"; }
-    Mod+R hotkey-overlay-title="Rofi"          { spawn-sh "rofi -show drun"; }
-    Mod+B hotkey-overlay-title="Brave"         { spawn-sh "flatpak run com.brave.Browser --enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=basic"; }
+    // Mod+R hotkey-overlay-title="Rofi"          { spawn-sh "rofi -show drun"; }
+    Mod+R hotkey-overlay-title="Launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+
+
+    Mod+B hotkey-overlay-title="Brave"         { spawn-sh "~/.config/niri/start-brave.com"; }
     Mod+W hotkey-overlay-title="Waybar toggle" { spawn-sh "~/.config/waybar/toggle_waybar.sh"; }
+    Mod+E hotkey-overlay-title="Thunar" { spawn-sh "thunar"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -595,3 +599,26 @@ binds {
 gestures {
     hot-corners { off; }
 }
+
+
+// Noctalia specific stuff
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height {fixed 920; }
+}
+
+debug {
+    // Allows notification actions and window activation from Noctalia
+    honor-xdg-activation-with-invalid-serial
+}
+
+layer-rule {
+    match namespace="^noctalia-backdrop"
+    place-within-backdrop true
+}
+
+// switch-events {
+//     lid-close { spawn "noctalia" "msg" "session" "lock-and-suspend"; }
+// }
